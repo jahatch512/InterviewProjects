@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="JamesWorld">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="./stylesheets/homePage.css"></link>
+    <script src="./node_modules/angular/angular.min.js"></script>
+    <script src="./node_modules/angular-route/angular-route.min.js"></script>
+
+    <title>WidgetWorld</title>
+
+  </head>
+
+  <body>
+    <div id="app">
+      <div class="banner">
+        James World
+      </div>
+      <div class="nav-bar">
+        <a href="#/home" class="anchors">Home</a>
+        <a href="#/news" class="anchors">News</a>
+        <a href="#/weather" class="anchors">Weather</a>
+        <a href="#/sports" class="anchors">Sports</a>
+        <a href="#/music" class="anchors">Music</a>
+      </div>
+
+      <div class="main-body">
+        <div ng-view></div>
+
+      </div>
+
+
+
+      <div class="footer">
+        HERE IS THE FOOTER
+      </div>
+
+    </div>
+
+
+
+
+
+    <script src="./javascripts/app.js"></script>
+  </body>
+</html>
