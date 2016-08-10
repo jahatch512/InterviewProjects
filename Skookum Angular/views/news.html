@@ -1,15 +1,31 @@
+<script src="../javascripts/news.js"></script>
 
 <div ng-controller="newsController">
-  <div>
-    This is the content of the news page
+  <div id="news-page-greeting">
+    Hi, and welcome to the news page here at James World! Below you will
+    find the latest top stories from James's favorite sites, including
+    HackerNews and TechCrunch.
   </div>
 
-  <h3>News Sources:</h3>
-  <br />
-  <ul>
-    <li ng-repeat="source in sources">
-      {{source}}
-    </li>
-  </ul>
+
+  <div>
+    <h4>Top Story:</h4>
+    <div class="news-title">
+      {{title}}
+      <br />
+      {{text}}
+      <br />
+      {{url}}
+    </div>
+
+
+    <h3>News Sources:</h3>
+    <br />
+    <div>
+      <div ng-repeat="source in sources">
+        {{source}}
+      </div>
+    </div>
+  </div>
 
 </div>
