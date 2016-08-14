@@ -22,7 +22,7 @@ body {
   line-height: 100px;
   border-bottom: 3px solid #3498db;
   border-radius: 3px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   text-align: center;
   justify-content: center;
   color: #3498db;
@@ -59,6 +59,9 @@ body {
   height: 100%;
   border: 1px solid #e74c3c;
   margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .footer {
@@ -75,4 +78,6 @@ body {
  .fa {
   color: #24CF5F;
   margin: 30px;
+  padding-bottom: 40px;
+  text-decoration: none;
 }
