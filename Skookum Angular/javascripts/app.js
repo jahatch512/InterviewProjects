@@ -70,30 +70,46 @@ var JamesWorld = angular.module('JamesWorld', ["ngRoute"])
 
 }).controller("weatherController", function($scope, $http){
   $scope.weather = "Sunny";
-  $http.get("http://api.wunderground.com/api/Your_Key/conditions/q/CA/San_Francisco.json")
+  $http.get("http://api.wunderground.com/api/82cd17994b06145e/conditions/q/CA/San_Francisco.json")
   .then(function(data){
-    console.log("second request success");
-    console.log(data);
+    var currentObservation = data.data.current_observation;
+    console.log(currentObservation);
 
-    if (data.data.articles[0].title){
-      $scope.title = data.data.articles[0].title;
+
+    if (currentObservation.feelslike_string){
+      $scope.feelsLike = currentObservation.feelslike_string;
     } else {
-      $scope.title = "(no title available)";
+      $scope.feelsLike = "(no data available)";
     }
-    if (data.data.articles[0].description){
-      $scope.description = data.data.articles[0].description;
+    if (currentObservation.display_location.full){
+      $scope.location = currentObservation.display_location.full;
     } else {
-      $scope.description = "(no description available)";
+      $scope.description = "(no location data available)";
     }
-    if (data.data.articles[0].url){
-      $scope.url = data.data.articles[0].url;
+    if (currentObservation.icon_url){
+      $scope.icon = currentObservation.icon_url;
     } else {
-      $scope.url = "no url";
+      $scope.icon = "no image available";
     }
-    if (data.data.articles[0].urlToImage){
-      $scope.image = data.data.articles[0].urlToImage;
+    if (currentObservation.image.url){
+      $scope.image = currentObservation.image.url;
     } else {
       $scope.image = "(no image available)";
+    }
+    if (currentObservation.weather){
+      $scope.weather = currentObservation.weather;
+    } else {
+      $scope.weather = "(no weather available)";
+    }
+    if (currentObservation.temp_f){
+      $scope.temp_f = currentObservation.temp_f;
+    } else {
+      $scope.temp_f = "(no temperature available)";
+    }
+    if (currentObservation.observation_time_rfc822){
+      $scope.time = currentObservation.observation_time_rfc822.slice(0,-5);
+    } else {
+      $scope.time = "(no temperature available)";
     }
   });
 }).controller("sportsController", function($scope, $http){
