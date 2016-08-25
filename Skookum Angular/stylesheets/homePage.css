@@ -5,10 +5,27 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  max-width: 860px;
 }
-
 body {
   background-color: #222222;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h4 {
+  align-self: center;
+  color: #24CF5F;
+  font-size: 20px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+h3 {
+  color: #3498db;
+  font-size: 1.17em;
+  margin: 10px 0px;
+  border-bottom: 3px outset #3498db;
 }
 
 @keyframes headerColor {
@@ -57,7 +74,6 @@ body {
 .main-body {
   width: 90%;
   height: 100%;
-  border: 1px solid #e74c3c;
   margin-bottom: 20px;
   display: flex;
   flex-direction: column;
@@ -72,7 +88,6 @@ body {
   text-align: center;
   font-size: 40px;
   color: #24CF5F;
-  border: 1px solid white;
 }
 
  .fa {
