@@ -20,12 +20,12 @@
 .news-title {
   display: flex;
   flex-direction: column;
-  margin: 20px;
   align-self: center;
   overflow: scroll;
 }
 
 .scroll-feed {
+  padding: 0px 20px;
   height: 400px;
   display: flex;
   flex-direction: column;
@@ -37,4 +37,5 @@
 
 .story-details {
   color: #95a5a6;
+  max-width: 300px;
 }
